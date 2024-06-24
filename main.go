@@ -31,8 +31,7 @@ func makeRequest(wg *sync.WaitGroup, results chan<- result) {
 	start := time.Now()
 	resp, err := http.Get(url)
 	if err != nil {
-		fmt.Println("Erro ao fazer request:", err)
-		results <- result{duration: 0, statusCode: 0}
+		results <- result{duration: 0, statusCode: resp.StatusCode}
 		return
 	}
 	defer resp.Body.Close()
