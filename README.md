@@ -5,5 +5,5 @@ Sem docker:
   - ./cli --url=http://google.com --requests=50 --concurrency=10
 
 Via docker:
-  - docker build -t go-stress-test-cli .
-  - docker run go-stress-test-cli --url=http://google.com --requests=50 --concurrency=10
+  - docker build -t stress-test .
+  - docker run stress-test --url=http://google.com --requests=50 --concurrency=10
